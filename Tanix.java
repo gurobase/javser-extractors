@@ -46,6 +46,7 @@ public class Tanix {
                 Document videoPage = Jsoup.connect("https://tanix.net/video/" + videoId).get();
                 refererLink = videoPage.select("meta[property=og:url]").attr("content");
             } catch (Exception e) {
+                e.printStackTrace();
             } finally {
                 String[] returning = new String[2];
                 returning[0] = refererLink;
@@ -111,7 +112,7 @@ public class Tanix {
                 returning[1] = strings[0];
                 return returning;
             } catch (Exception e) {
-
+                e.printStackTrace();
             }
 
             return returning;
